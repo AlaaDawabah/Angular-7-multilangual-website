@@ -1,0 +1,24 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+
+.blueFooter {
+  background-color: $blueColor;
+  @extend %sectionPadding;
+  color: $whiteColor;
+  button {
+    @include button(
+      1px solid $whiteColor,
+      10px 20px,
+      transparent,
+      10px,
+      $whiteColor
+    );
+  }
+}
+
+
+@media (max-width: 768px) {
+  .blueFooter {
+    text-align: center;
+  }
+}

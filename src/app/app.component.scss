@@ -1,0 +1,36 @@
+// .text-md-right{
+//     text-align: right !important;
+// }
+// .text-md-left{
+//     text-align: left !important;
+// } 
+
+// div:dir(rtl){
+//     .text-md-left{
+//         text-align: right !important;
+//     }
+// }
+// div:dir(rtl) .text-md-left{
+//      text-align: right !important;
+// }
+// div:dir(ltr) .text-md-left{
+//     text-align: left !important;
+
+// }
+.text-md-left{
+    text-align: left !important;
+}
+.text-md-right{
+    i{
+        padding-left: 12px;
+    }
+    // text-align: right !important;
+   
+     
+}
+body{
+    font-size: 16px;
+}
+body[class*="text-md-right"]p{
+    padding-right: 15px;
+  }

@@ -1,0 +1,454 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+
+.parent {
+  @extend %marginTop;
+}
+p,
+h3,
+h4,
+h5,
+h6 {
+  padding: 0;
+  margin: 0;
+}
+p {
+  padding: 0.3rem 0;
+}
+h3,
+h4,
+h5,
+h6 {
+  padding: 0.5rem 0;
+}
+.sectionHeader {
+  @include sectionHeader($blueColor, none);
+  padding-bottom: 25px;
+  // text-align: left;
+}
+/****************************************************   SECTION1   **********************************/
+
+.section1 {
+  color: #fff;
+  position: relative;
+  .color-overlay {
+    background-color: #8f1bbd;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 25;
+    opacity: 0.5;
+  }
+
+  .section1Content {
+    padding: 150px 0;
+    color: #fff;
+    position: absolute;
+    z-index: 40;
+    left: 50%;
+    top: 50%;
+    right: initial;
+    bottom: initial;
+    transform: translate(-50%, -50%);
+    width: 70%;
+  }
+  .carousel-indicators .active {
+    opacity: 1;
+    background-color: #26d4da;
+  }
+
+  .carousel-indicators li {
+    box-sizing: content-box;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: 30px;
+    height: 3px;
+    margin-right: 3px;
+    margin-left: 3px;
+    text-indent: -999px;
+    cursor: pointer;
+    background-color: #b4abab;
+    background-clip: padding-box;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    opacity: 0.5;
+    transition: opacity 0.6s ease;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    z-index: 30;
+  }
+  button {
+    @include button(
+      1px solid $whiteColor,
+      10px 25px,
+      transparent,
+      0,
+      $whiteColor
+    );
+  }
+}
+
+/******************************SECTION2**********************************/
+
+.section2 {
+  background-color: $darkBlack;
+  @extend %sectionMargin;
+  @extend %sectionPadding;
+  .card {
+    border: none;
+    background-color: transparent;
+    i {
+      color: $blackColor;
+      font-size: 35px;
+    }
+    .card-text {
+      color: $grayColor;
+    }
+  }
+  h5 {
+    color: $blueColor;
+  }
+}
+
+/****************************SECTION3**********************************/
+
+.section3 {
+  @extend %sectionMargin;
+  @extend %sectionPadding;
+  .section3 i {
+    color: #fff;
+  }
+  .hovereffect {
+    width: 100%;
+    height: 100%;
+    float: left;
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    cursor: default;
+  }
+
+  .hovereffect .overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    overflow: hidden;
+    top: 0;
+    left: 0;
+  }
+
+  .hovereffect img {
+    display: block;
+    position: relative;
+    -webkit-transform: scale(1.1);
+    -ms-transform: scale(1.1);
+    transform: scale(1.1);
+    -webkit-transition: all 0.35s;
+    transition: all 0.35s;
+  }
+
+  .hovereffect:hover img {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+    filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="0.7" /><feFuncG type="linear" slope="0.7" /><feFuncB type="linear" slope="0.7" /></feComponentTransfer></filter></svg>#filter');
+    filter: brightness(0.5);
+    -webkit-filter: brightness(0.5);
+  }
+
+  .hovereffect a.info {
+    display: inline-block;
+    text-decoration: none;
+    padding: 7px 14px;
+    text-transform: uppercase;
+    // color: #fff;
+    color: $blueColor;
+    border: 1px solid #fff;
+    margin: 50px 0 0 0;
+    background-color: transparent;
+  }
+
+  .hovereffect a.info:hover {
+    box-shadow: 0 0 5px #fff;
+  }
+
+  .hovereffect .rotate {
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+  }
+
+  .hovereffect hr {
+    width: 50%;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    // color:$whiteColor;
+  }
+
+  .hovereffect hr:nth-child(2) {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale3d(0, 0, 1);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale3d(0, 0, 1);
+  }
+
+  .hovereffect hr:nth-child(3) {
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(90deg) scale3d(0, 0, 1);
+    transform: translate3d(-50%, -50%, 0) rotate(90deg) scale3d(0, 0, 1);
+  }
+
+  .hovereffect h2,
+  .hovereffect hr {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform-origin: 50%;
+    -ms-transform-origin: 50%;
+    transform-origin: 50%;
+    background-color: $whiteColor;
+    // background-color: $blueColor;
+    margin: 0px;
+  }
+
+  .group1,
+  .group2 {
+    left: 50%;
+    position: absolute;
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    -webkit-transform: translate3d(-50%, -50%, 0);
+    transform: translate3d(-50%, -50%, 0);
+    -webkit-transform-origin: 50%;
+    -ms-transform-origin: 50%;
+    transform-origin: 50%;
+    background-color: transparent;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .group1 {
+    top: 40%;
+  }
+
+  .group2 {
+    top: 60%;
+  }
+
+  .hovereffect p {
+    width: 30%;
+    text-transform: none;
+    font-size: 15px;
+    line-height: 2;
+  }
+
+  .hovereffect p a {
+    color: $blueColor;
+  }
+
+  .hovereffect p a:hover,
+  .hovereffect p a:focus {
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+  }
+
+  .hovereffect a i {
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+    transition: opacity 0.35s, transform 0.35s;
+    padding: 10px;
+    font-size: 20px;
+  }
+
+  .group1 a:first-child i {
+    -webkit-transform: translate3d(-60px, -60px, 0) rotate(45deg) scale(2);
+    transform: translate3d(-60px, -60px, 0) rotate(45deg) scale(2);
+  }
+
+  .group1 a:nth-child(2) i {
+    -webkit-transform: translate3d(60px, -60px, 0) rotate(45deg) scale(2);
+    transform: translate3d(60px, -60px, 0) rotate(45deg) scale(2);
+  }
+
+  .group2 a:first-child i {
+    -webkit-transform: translate3d(-60px, 60px, 0) rotate(45deg) scale(2);
+    transform: translate3d(-60px, 60px, 0) rotate(45deg) scale(2);
+  }
+
+  .group2 a:nth-child(2) i {
+    -webkit-transform: translate3d(60px, 60px, 0) rotate(45deg) scale(2);
+    transform: translate3d(60px, 60px, 0) rotate(45deg) scale(2);
+  }
+
+  .hovereffect:hover hr:nth-child(2) {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(0deg) scale3d(1, 1, 1);
+    transform: translate3d(-50%, -50%, 0) rotate(0deg) scale3d(1, 1, 1);
+    // color: #fff;
+  }
+
+  .hovereffect:hover hr:nth-child(3) {
+    opacity: 1;
+    filter: alpha(opacity=100);
+    -webkit-transform: translate3d(-50%, -50%, 0) rotate(90deg) scale3d(1, 1, 1);
+    transform: translate3d(-50%, -50%, 0) rotate(90deg) scale3d(1, 1, 1);
+  }
+
+  .hovereffect:hover .group1 i:empty,
+  .hovereffect:hover .group2 i:empty {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0) rotate(45deg) scale(1);
+    opacity: 1;
+    filter: alpha(opacity=100);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    padding: 5px;
+  }
+
+  h2 {
+    text-align: center;
+    padding-bottom: 1em;
+  }
+
+  .slick-dots {
+    text-align: center;
+    margin: 0 0 10px 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      margin-left: 4px;
+      margin-right: 4px;
+      &.slick-active {
+        button {
+          background-color: black;
+        }
+      }
+      button {
+        font: 0/0 a;
+        text-shadow: none;
+        color: transparent;
+        background-color: #999;
+        border: none;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+      }
+      :hover {
+        background-color: black;
+      }
+    }
+  }
+
+  /* Custom Arrow */
+  .prev {
+    color: #999;
+    position: absolute;
+    top: 38%;
+    left: -2em;
+    font-size: 1.5em;
+    :hover {
+      cursor: pointer;
+      color: black;
+    }
+  }
+  .next {
+    color: #999;
+    position: absolute;
+    top: 38%;
+    right: -2em;
+    font-size: 1.5em;
+    :hover {
+      cursor: pointer;
+      color: black;
+    }
+  }
+
+  @media screen and (max-width: 800px) {
+    .next {
+      display: none !important;
+    }
+  }
+}
+
+/****************************SECTION4**************************/
+
+.section4 {
+  background-color: $blueColor;
+  color: $whiteColor;
+  @extend %sectionMargin;
+  @extend %sectionPadding;
+  .sectionHeader {
+    @include sectionHeader($whiteColor, 0 auto);
+  }
+}
+
+/****************************QUERIES**************************/
+
+@media (min-width: 300px) and (max-width: 460px) {
+  .parent {
+    text-align: center !important;
+    font-size: 15px;
+    .section1Content {
+      font-size: 12px;
+      color: #fff;
+      position: absolute;
+      z-index: 40;
+      left: 32%;
+      top: 54%;
+      right: initial;
+      bottom: initial;
+      transform: translate(-50%, -50%);
+      padding: 50px 0;
+    
+    }
+    h1 {
+      font-size: 20px;
+    }
+    button {
+      @include button(
+        1px solid $whiteColor,
+        2px 5px,
+        transparent,
+        0,
+        $whiteColor
+      );
+    }
+  }
+}
+@media (min-width: 465px) and (max-width:1024px) {
+  .parent {
+    text-align: center;
+    font-size: 16px;
+    .section1Content {
+      font-size: 25px;
+      color: #fff;
+      position: absolute;
+      z-index: 40;
+      left: 51%;
+      top: 49%;
+      right: initial;
+      bottom: initial;
+      transform: translate(-50%, -50%);
+     
+    }
+    button {
+      @include button(
+        1px solid $whiteColor,
+        2px 5px,
+        transparent,
+        0,
+        $whiteColor
+      );
+    }
+  }
+}

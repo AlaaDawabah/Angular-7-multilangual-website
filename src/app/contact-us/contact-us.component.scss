@@ -1,0 +1,18 @@
+@import "../../assets/sass/variables";
+@import "../../assets/sass/mixins";
+
+.sectionForm form,
+.sectionForm {
+  @extend %sectionMargin;
+}
+.sectionForm{
+  @extend %marginTop;
+  button {
+    @include button(none, 10px 35px, $blueColor, 0, $whiteColor);
+  }
+  .sectionHeader {
+    @include sectionHeader($blueColor, left);
+  }
+}
+
+
